@@ -1,2 +1,1 @@
-# ublabs-ojs-updater-examples
-Examples accompanying the ublabs blogs post about the ojs_updater script
+Accompanying code for the December 2022 post of the [UB Labs Blog](https://labs.ub.uni-frankfurt.de).
