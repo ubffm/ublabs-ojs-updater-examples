@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+# Copyright 2019-2022, UB JCS, Goethe University Frankfurt am Main
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 set -e
 command -v "xmlstarlet" >/dev/null 2>&1 || { echo "xmlstarlet needed."; exit 1; }
 command -v "curl" >/dev/null 2>&1 || { echo "curl needed."; exit 1; }
