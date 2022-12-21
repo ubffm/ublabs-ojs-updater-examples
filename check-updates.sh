@@ -6,6 +6,7 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 set -e
+command -v "mailx" >/dev/null 2>&1 || { echo "mailx needed."; exit 1; }
 command -v "xmlstarlet" >/dev/null 2>&1 || { echo "xmlstarlet needed."; exit 1; }
 command -v "curl" >/dev/null 2>&1 || { echo "curl needed."; exit 1; }
 
@@ -14,8 +15,8 @@ URL='http://pkp.sfu.ca/ojs/xml/ojs-version.xml'
 QUERY='/version/package'
 SENDER='sender@example.com'
 RECIPIENT='recipient@example.com'
-OWNER='wwwrun'
-GROUP='www'
+OWNER='www-data'
+GROUP='www-data'
 
 package="$(curl -sf "$URL" | xmlstarlet sel -t -v "$QUERY" 2>/dev/null)"
 
