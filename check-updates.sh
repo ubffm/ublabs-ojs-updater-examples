@@ -18,14 +18,14 @@ RECIPIENT='recipient@example.com'
 OWNER='www-data'
 GROUP='www-data'
 
-package="$(curl -sf "$URL" | xmlstarlet sel -t -v "$QUERY" 2>/dev/null)"
+package="$(curl -Lsf "$URL" | xmlstarlet sel -t -v "$QUERY" 2>/dev/null)"
 
 [[ -z "$package" ]] && { echo 'No package url.'; exit 1; }
 file="$(basename "$package")"
 target="${OJS_VERSIONS}/${file}"
 [[ -e "$target" ]] && { echo "No need to update"; exit 1; } 
 temp_file="$(mktemp tmp.XXXXXX.ojs-download)"
-curl -s "$package" -o "$temp_file" \
+curl -Ls "$package" -o "$temp_file" \
      && install -m 0644 \
                 -o "$OWNER" \
                 -g "$GROUP" \
