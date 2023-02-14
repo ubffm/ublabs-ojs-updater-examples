@@ -11,7 +11,7 @@ command -v "xmlstarlet" >/dev/null 2>&1 || { echo "xmlstarlet needed."; exit 1; 
 command -v "curl" >/dev/null 2>&1 || { echo "curl needed."; exit 1; }
 
 OJS_VERSIONS='/usr/local/ojs/versions'
-URL='http://pkp.sfu.ca/ojs/xml/ojs-version.xml'
+URL='https://pkp.sfu.ca/ojs/xml/ojs-version.xml'
 QUERY='/version/package'
 SENDER='sender@example.com'
 RECIPIENT='recipient@example.com'
